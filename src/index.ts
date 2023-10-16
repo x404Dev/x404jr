@@ -1,4 +1,4 @@
-import { Collection, GatewayIntentBits } from "discord.js";
+import { Collection, GatewayIntentBits, Partials } from "discord.js";
 import dotenv from "dotenv";
 import path from "path";
 import fs from "fs";
@@ -8,7 +8,11 @@ import EasyClient from "./structure/EasyClient";
 dotenv.config();
 
 const client = new EasyClient({
-  intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent],
+  intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent, GatewayIntentBits.DirectMessages],
+  partials: [
+    Partials.Channel,
+    Partials.Message
+  ]
 });
 
 const commands: Collection<string, any> = new Collection<string, EasyCommand>();

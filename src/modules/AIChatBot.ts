@@ -48,7 +48,7 @@ export default class AIChatBot {
 
     const response = await this.openai.chat.completions
       .create({
-        model: "gpt-3.5-turbo",
+        model: aiChatBotOptions.model,
         messages: conversation as any, //Ik it's not the best way to do it but it works :P
       })
       .catch((err) => console.error("OpenAI Error: \n" + err));

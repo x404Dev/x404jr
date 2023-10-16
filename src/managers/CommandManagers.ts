@@ -24,9 +24,9 @@ export default class CommandManagers {
       // Register global commands
       const globalCommandsData = rest.put(
         Routes.applicationCommands(process.env.DISCORD_APP_ID!),
-        { body: commands.map((command) => command.toJSON()) }
+        { body: commands.filter((command => command.enabled)).map((command) => command.toJSON()) }
       );
-      console.log(chalk.yellow.bold("x404Jr") + chalk.blue.bold(":") + chalk.cyan(" Successfully reloaded ") + chalk.yellow.bold(commands.size.toString()) + chalk.cyan(" (/) commands! =D"))
+      console.log(chalk.yellow.bold("x404Jr") + chalk.blue.bold(":") + chalk.cyan(" Successfully reloaded ") + chalk.yellow.bold(commands.filter((command => command.enabled)).size.toString()) + chalk.cyan(" (/) commands! =D"))
     } catch (error) {
       console.error(error);
     }

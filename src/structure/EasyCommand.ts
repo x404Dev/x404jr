@@ -3,6 +3,7 @@ import { ChatInputCommandInteraction, RESTPostAPIChatInputApplicationCommandsJSO
 export default class EasyCommand {
 
     public slashCommand: SlashCommandBuilder | SlashCommandSubcommandsOnlyBuilder;
+    public enabled?: boolean = true;
 
     constructor(command: SlashCommandBuilder | SlashCommandSubcommandsOnlyBuilder) {
         this.slashCommand = command;
