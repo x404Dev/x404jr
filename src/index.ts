@@ -8,7 +8,7 @@ import EasyClient from "./structure/EasyClient";
 dotenv.config();
 
 const client = new EasyClient({
-  intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages],
+  intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent],
 });
 
 const commands: Collection<string, any> = new Collection<string, EasyCommand>();
