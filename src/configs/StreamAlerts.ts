@@ -4,3 +4,5 @@ const StreamAlertsOptions = {
     alertChannel: '1161452730024480838',
     refreshInterval: 30 * 1000,
 }
+
+export default StreamAlertsOptions;
